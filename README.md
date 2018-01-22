@@ -10,11 +10,18 @@ Add an environment variable named "OPENVPN_SERVER_ADDRESS=nt.vpnserver.com" to s
 
 A script /root/check_public_ip.sh allow you to check your public ip address.
 Open two console, on to run the script (loop) and another to kill vpn connection :
-...
-$ killall openvpn
-...
 
-you can kill several time and check in another console that the only public ip is the vpn one, if vpn down, you have no external access.
+### Console 1
+```
+$ killall openvpn
+```
+### Console 2
+
+```
+$ sh /root/check_public_ip.sh
+```
+
+You can kill several time and check in another console that the only public ip is the vpn one, if vpn down, you have no external access.
 
 ## Run container from Docker registry
 To run the container use this command:
