@@ -14,7 +14,7 @@ OPENVPN_SERVER_ADDRESS=**None**
 
 ## Update packages and install software
 RUN apt-get update  \
-    && apt-get install -y squid3 iptables-persitent dnsutils \
+    && apt-get install -y squid3 iptables-persistent dnsutils \
     && mv -f /etc/squid/squid.conf /etc/squid/squid.conf.original \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
