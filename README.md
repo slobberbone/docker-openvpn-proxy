@@ -3,7 +3,10 @@
 
 # docker-openvpn-proxy
 Docker OpenVPN Client and Squid Proxy Server
-Additional : Add an environment variable named "OPENVPN_SERVER_ADDRESS=nt.vpnserver.com" to set the dns name or ip of the vpn server. Once done, all output traffic will be blocked if vpn interface or connection down.
+
+## Additional - Output traffic only throw VPN connection
+
+Add an environment variable named "OPENVPN_SERVER_ADDRESS=nt.vpnserver.com" to set the dns name or ip of the vpn server. Once done, all output traffic will be blocked if vpn interface or connection down.
 
 A script /root/check_public_ip.sh allow you to check your public ip address.
 Open two console, on to run the script (loop) and another to kill vpn connection :
