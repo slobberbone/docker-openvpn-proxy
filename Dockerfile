@@ -23,14 +23,14 @@ ADD squid/ /etc/squid/
 ADD check_public_ip.sh/ /root/check_public_ip.sh
 RUN chmod +x /root/check_public_ip.sh
 
-RUN iptables -A OUTPUT -j DROP \
+CMD iptables -A OUTPUT -j DROP \
     && iptables -A INPUT  -i tun0 -j ACCEPT \
     && iptables -A FORWARD  -i tun0 -j ACCEPT \
     && iptables -A INPUT  -s $OPENVPN_SERVER_ADDRESS -j ACCEPT \
     && iptables -A OUTPUT -o tun0 -j ACCEPT \
     && iptables -A OUTPUT -d $OPENVPN_SERVER_ADDRESS -j ACCEPT
 
-RUN iptables-save > /etc/iptables/rules_outpu_vpn_only
+CMD iptables-save > /etc/iptables/rules_outpu_vpn_only
 
 EXPOSE 3128
 
